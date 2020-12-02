@@ -1,6 +1,6 @@
 // @Author: abbeymart | Abi Akindele | @Created: 2020-12-01 | @Updated: 2020-12-01
 // @Company: mConnect.biz | @License: MIT
-// @Description: go: mConnect
+// @Description: mConnect standard transaction response functions
 
 package mcresponse
 
@@ -16,11 +16,11 @@ func msgFunc(code string, resCode uint32, resMessage string, msg string, value i
 
 func GetResMessage(msgType string, options ResponseMessageOptions) ResponseMessage {
 	var (
-		value      interface{}
-		code       string
-		resCode    uint32
-		resMessage string
-		message    string
+		value      interface{} = nil
+		code                   = "unknown"
+		resCode    uint32      = 501 // NotImplemented
+		resMessage             = ""
+		message                = "Unknown/Unspecified response message"
 	)
 	// compose response-Message
 	if val, ok := StdResMessages[msgType]; ok {
@@ -31,14 +31,16 @@ func GetResMessage(msgType string, options ResponseMessageOptions) ResponseMessa
 		value = val.Value
 		// update option-values: Message && Value
 		if options.Value != nil {
+			// set value to optional value
 			value = options.Value
 		}
 		if options.Message != "" {
+			// append optional message
 			message += " | "
 			message += options.Message
 		}
 	} else {
-		if val, ok := StdResMessages["stdRes"]; ok {
+		if val, ok := StdResMessages["unknown"]; ok {
 			code = val.Code
 			resCode = val.ResCode
 			resMessage = val.ResMessage
@@ -46,9 +48,11 @@ func GetResMessage(msgType string, options ResponseMessageOptions) ResponseMessa
 			value = val.Value
 			// update option-values: Message && Value
 			if options.Value != nil {
+				// set value to optional value
 				value = options.Value
 			}
 			if options.Message != "" {
+				// append optional message
 				message += " | "
 				message += options.Message
 			}

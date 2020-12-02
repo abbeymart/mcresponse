@@ -2,4 +2,4 @@
 
 - res-message package includes the standard responses for various activities/operations
 - It exposes the following function: getResMessage
-- See the test folder for different test cases / scenarios and usage
+- See the test file for different test cases / scenarios and usage

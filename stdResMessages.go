@@ -1,6 +1,6 @@
 // @Author: abbeymart | Abi Akindele | @Created: 2020-12-01 | @Updated: 2020-12-01
 // @Company: mConnect.biz | @License: MIT
-// @Description: go: mConnect
+// @Description: mConnect standard transaction response messages
 
 package mcresponse
 
@@ -20,7 +20,7 @@ var StdResMessages = MessageParam{
 		Value:      "",
 	},
 	"connectError": {
-		Code:       "connectionError",
+		Code:       "connectError",
 		ResCode:    NetworkAuthenticationRequired,
 		ResMessage: StatusText[NetworkAuthenticationRequired],
 		Message:    "Connection error",
@@ -82,6 +82,13 @@ var StdResMessages = MessageParam{
 		Message:    "Record(s) deleted/removed successfully",
 		Value:      "",
 	},
+	"deleted": {
+		Code:       "removed",
+		ResCode:    OK,
+		ResMessage: StatusText[OK],
+		Message:    "Record(s) deleted/removed successfully",
+		Value:      "",
+	},
 	"subItems": {
 		Code:       "subItems",
 		ResCode:    NotModified,
@@ -89,7 +96,7 @@ var StdResMessages = MessageParam{
 		Message:    "Record includes sub-items, which must be removed first",
 		Value:      "",
 	},
-	"duplicateRec": {
+	"duplicate": {
 		Code:       "duplicate",
 		ResCode:    NotModified,
 		ResMessage: StatusText[NotModified],
@@ -131,14 +138,14 @@ var StdResMessages = MessageParam{
 		Message:    "Error inserting/creating new information/record",
 		Value:      "",
 	},
-	"recExist": {
+	"exists": {
 		Code:       "exists",
 		ResCode:    NotModified,
 		ResMessage: StatusText[NotModified],
 		Message:    "Document/record exists",
 		Value:      "",
 	},
-	"stdRes": {
+	"unknown": {
 		Code:       "unknown",
 		ResCode:    UnprocessableEntity,
 		ResMessage: StatusText[UnprocessableEntity],

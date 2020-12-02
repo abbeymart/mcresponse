@@ -1,13 +1,13 @@
 // @Author: abbeymart | Abi Akindele | @Created: 2020-12-01 | @Updated: 2020-12-01
 // @Company: mConnect.biz | @License: MIT
-// @Description: go: mConnect
+// @Description: mConnect standard transaction response types
 
 package mcresponse
 
 type ResponseMessage struct {
 	Code       string
-	ResCode    uint32
-	ResMessage string
+	ResCode    uint32		// Standard Http Code
+	ResMessage string		// Standard Http-Code Text
 	Message    string
 	Value      interface{}
 }
