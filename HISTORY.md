@@ -1,5 +1,10 @@
 # Historical logs
 
+## Version 0.2.2
+
+- Release date: Dec 02, 2020
+- Patched to use mctestgo v0.5.0
+
 ## Version 0.2.1
 
 - Release date: Dec 02, 2020
