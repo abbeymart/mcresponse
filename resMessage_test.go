@@ -37,7 +37,7 @@ func TestSetCache(t *testing.T) {
 		Value     : "",
 		Message   : "Parameters checking error",
 	}
-	const unAuthMsg = "unAuthorized"
+	//const unAuthMsg = "unAuthorized"
 
 	mctest.McTest(mctest.OptionValue{
 		Name: "should return success code for success-message",
