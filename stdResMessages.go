@@ -142,7 +142,7 @@ var StdResMessages = MessageParam{
 		Code:       "unknown",
 		ResCode:    UnprocessableEntity,
 		ResMessage: StatusText[UnprocessableEntity],
-		Message:    "Unspecified response/error message",
+		Message:    "Unspecified response/error Message",
 		Value:      "",
 	},
 }

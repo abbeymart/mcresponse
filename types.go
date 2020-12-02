@@ -13,11 +13,8 @@ type ResponseMessage struct {
 }
 
 type ResponseMessageOptions struct {
-	code string
-	resCode uint32
-	resMessage string
-	message string
-	value interface{}
+	Message string
+	Value   interface{}
 }
 
 type MessageParam map[string]ResponseMessage
