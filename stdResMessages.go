@@ -1,0 +1,148 @@
+// @Author: abbeymart | Abi Akindele | @Created: 2020-12-01 | @Updated: 2020-12-01
+// @Company: mConnect.biz | @License: MIT
+// @Description: go: mConnect
+
+package mcresponse
+
+var StdResMessages = MessageParam{
+	"paramsError": {
+		Code:       "paramsError",
+		ResCode:    NotAcceptable,
+		ResMessage: StatusText[NotAcceptable],
+		Message:    "Parameters checking error",
+		Value:      "",
+	},
+	"checkError": {
+		Code:       "paramsError",
+		ResCode:    NotAcceptable,
+		ResMessage: StatusText[NotAcceptable],
+		Message:    "Parameters checking error",
+		Value:      "",
+	},
+	"connectError": {
+		Code:       "connectionError",
+		ResCode:    NetworkAuthenticationRequired,
+		ResMessage: StatusText[NetworkAuthenticationRequired],
+		Message:    "Connection error",
+		Value:      "",
+	},
+	"validateError": {
+		Code:       "paramsError",
+		ResCode:    NotAcceptable,
+		ResMessage: StatusText[NotAcceptable],
+		Message:    "Validation error for inputs parameters",
+		Value:      "",
+	},
+	"tokenExpired": {
+		Code:       "tokenExpired",
+		ResCode:    Unauthorized,
+		ResMessage: StatusText[Unauthorized],
+		Message:    "Unauthorized. Token / Access-key has expired. Please login again",
+		Value:      "",
+	},
+	"unAuthorized": {
+		Code:       "unAuthorized",
+		ResCode:    Unauthorized,
+		ResMessage: StatusText[Unauthorized],
+		Message:    "Unauthorised Action or Task",
+		Value:      "",
+	},
+	"notFound": {
+		Code:       "notFound",
+		ResCode:    NotFound,
+		ResMessage: StatusText[NotFound],
+		Message:    "Requested information not found",
+		Value:      "",
+	},
+	"success": {
+		Code:       "success",
+		ResCode:    OK,
+		ResMessage: StatusText[OK],
+		Message:    "Request completed successfully",
+		Value:      "",
+	},
+	"removeDenied": {
+		Code:       "removeDenied",
+		ResCode:    Unauthorized,
+		ResMessage: StatusText[Unauthorized],
+		Message:    "Remove action/task denied/unauthorised",
+		Value:      "",
+	},
+	"removeError": {
+		Code:       "removeError",
+		ResCode:    NotModified,
+		ResMessage: StatusText[NotModified],
+		Message:    "Error removing/deleting information, retry or contact system-admin",
+		Value:      "",
+	},
+	"removed": {
+		Code:       "removed",
+		ResCode:    OK,
+		ResMessage: StatusText[OK],
+		Message:    "Record(s) deleted/removed successfully",
+		Value:      "",
+	},
+	"subItems": {
+		Code:       "subItems",
+		ResCode:    NotModified,
+		ResMessage: StatusText[NotModified],
+		Message:    "Record includes sub-items, which must be removed first",
+		Value:      "",
+	},
+	"duplicateRec": {
+		Code:       "duplicate",
+		ResCode:    NotModified,
+		ResMessage: StatusText[NotModified],
+		Message:    "Duplicate record exists",
+		Value:      "",
+	},
+	"updated": {
+		Code:       "updated",
+		ResCode:    OK,
+		ResMessage: StatusText[OK],
+		Message:    "Information update action completed successfully",
+		Value:      "",
+	},
+	"updateError": {
+		Code:       "updateError",
+		ResCode:    NotModified,
+		ResMessage: StatusText[NotModified],
+		Message:    "Error updating information/record(s)",
+		Value:      "",
+	},
+	"updateDenied": {
+		Code:       "updateDenied",
+		ResCode:    Unauthorized,
+		ResMessage: StatusText[Unauthorized],
+		Message:    "Update action/task not authorised",
+		Value:      "",
+	},
+	"inserted": {
+		Code:       "inserted",
+		ResCode:    OK,
+		ResMessage: StatusText[OK],
+		Message:    "Information/record(s) inserted/created successfully",
+		Value:      "",
+	},
+	"insertError": {
+		Code:       "insertError",
+		ResCode:    NotModified,
+		ResMessage: StatusText[NotModified],
+		Message:    "Error inserting/creating new information/record",
+		Value:      "",
+	},
+	"recExist": {
+		Code:       "exists",
+		ResCode:    NotModified,
+		ResMessage: StatusText[NotModified],
+		Message:    "Document/record exists",
+		Value:      "",
+	},
+	"stdRes": {
+		Code:       "unknown",
+		ResCode:    UnprocessableEntity,
+		ResMessage: StatusText[UnprocessableEntity],
+		Message:    "Unspecified response/error message",
+		Value:      "",
+	},
+}
