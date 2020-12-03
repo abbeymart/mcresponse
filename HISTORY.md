@@ -1,5 +1,10 @@
 # Historical logs
 
+## Version 0.3.0
+
+- Release date: Dec 03, 2020
+- Added json-tags to types
+
 ## Version 0.2.2
 
 - Release date: Dec 02, 2020
