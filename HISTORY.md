@@ -1,5 +1,11 @@
 # Historical logs
 
+## Version 0.3.1
+
+- Release date: Dec 08, 2020
+- Updated github package link / reference
+- Patched to use mctestgo v0.5.1
+
 ## Version 0.3.0
 
 - Release date: Dec 03, 2020

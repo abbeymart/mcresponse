@@ -1,4 +1,4 @@
-# mcresponsego
+# mcresponse | github.com/abbeymart/mcresponsego
 
 - res-message package includes the standard responses for various activities/operations
 - It exposes the following function: getResMessage
