@@ -46,7 +46,11 @@ func GetResMessage(msgType string, options ResponseMessageOptions) ResponseMessa
 			resMessage = val.ResMessage
 			message = val.Message
 			value = val.Value
-			// update option-values: Message && Value
+			// update msgType and option-values: Message && Value
+			if msgType != "" {
+				// set value to msgType, as specified
+				code = msgType
+			}
 			if options.Value != nil {
 				// set value to optional value
 				value = options.Value

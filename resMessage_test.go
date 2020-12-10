@@ -11,7 +11,7 @@ import (
 )
 import "github.com/abbeymart/mctestgo"
 
-func TestSetCache(t *testing.T) {
+func TestResMessage(t *testing.T) {
 	// test-data
 	const msgType = "success"
 	const msgType2 = "checkError"

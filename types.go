@@ -5,16 +5,16 @@
 package mcresponse
 
 type ResponseMessage struct {
-	Code       string	`json:"code"`
-	ResCode    uint32	`json:"resCode"`		// Standard Http Code
-	ResMessage string	`json:"resMessage"`		// Standard Http-Code Text
-	Message    string	`json:"message"`
-	Value      interface{}	`json:"value"`
+	Code       string      `json:"code"`
+	ResCode    uint32      `json:"res_code"`    // Standard Http Code
+	ResMessage string      `json:"res_message"` // Standard Http-Code Text
+	Message    string      `json:"message"`
+	Value      interface{} `json:"value"`
 }
 
 type ResponseMessageOptions struct {
-	Message string	`json:"message"`
-	Value   interface{}	`json:"value"`
+	Message string      `json:"message"`
+	Value   interface{} `json:"value"`
 }
 
 type MessageParam map[string]ResponseMessage

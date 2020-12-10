@@ -1,5 +1,10 @@
 # Historical logs
 
+## Version 0.4.0
+
+- Release date: Dec 10, 2020
+- Refactored types (json-formats) & res-message function
+
 ## Version 0.3.1
 
 - Release date: Dec 08, 2020
