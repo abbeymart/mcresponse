@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 )
-import "github.com/abbeymart/mctestgo"
+import "github.com/abbeymart/mctest"
 
 func TestResMessage(t *testing.T) {
 	// test-data
