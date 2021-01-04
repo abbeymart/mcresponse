@@ -4,7 +4,7 @@
 
 package mcresponse
 
-func msgFunc(code string, resCode uint32, resMessage string, msg string, value interface{}) ResponseMessage {
+func msgFunc(code string, resCode int, resMessage string, msg string, value interface{}) ResponseMessage {
 	return ResponseMessage{
 		Code:       code,
 		ResCode:    resCode,
@@ -18,7 +18,7 @@ func GetResMessage(msgType string, options ResponseMessageOptions) ResponseMessa
 	var (
 		value      interface{} = nil
 		code                   = "unknown"
-		resCode    uint32      = 501 // NotImplemented
+		resCode                = 501 // NotImplemented
 		resMessage             = ""
 		message                = "Unknown/Unspecified response message"
 	)

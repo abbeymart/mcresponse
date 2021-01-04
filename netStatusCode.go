@@ -132,7 +132,7 @@ const (
 	NetworkAuthenticationRequired = 511
 )
 
-var StatusText = map[uint]string{
+var StatusText = map[int]string{
 	Continue:                      "Continue",
 	SwitchingProtocols:            "Switching Protocols",
 	Processing:                    "Processing",
