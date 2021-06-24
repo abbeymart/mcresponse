@@ -5,130 +5,130 @@
 package mcresponse
 
 const (
-	/** RFC 7231, 6.2.1 */
+	// Continue /** RFC 7231, 6.2.1 */
 	Continue = 100
-	/** RFC 7231, 6.2.2 */
+	// SwitchingProtocols /** RFC 7231, 6.2.2 */
 	SwitchingProtocols = 101
-	/** RFC 2518, 10.1 */
+	// Processing /** RFC 2518, 10.1 */
 	Processing = 102
-	/** RFC 8297 **/
+	// EarlyHints /** RFC 8297 **/
 	EarlyHints = 103
-	/** RFC 7231, 6.3.1 */
+	// OK /** RFC 7231, 6.3.1 */
 	OK = 200
-	/** RFC 7231, 6.3.2 */
+	// Created /** RFC 7231, 6.3.2 */
 	Created = 201
-	/** RFC 7231, 6.3.3 */
+	// Accepted /** RFC 7231, 6.3.3 */
 	Accepted = 202
-	/** RFC 7231, 6.3.4 */
+	// NonAuthoritativeInfo /** RFC 7231, 6.3.4 */
 	NonAuthoritativeInfo = 203
-	/** RFC 7231, 6.3.5 */
+	// NoContent /** RFC 7231, 6.3.5 */
 	NoContent = 204
-	/** RFC 7231, 6.3.6 */
+	// ResetContent /** RFC 7231, 6.3.6 */
 	ResetContent = 205
-	/** RFC 7233, 4.1 */
+	// PartialContent /** RFC 7233, 4.1 */
 	PartialContent = 206
-	/** RFC 4918, 11.1 */
+	// MultiStatus /** RFC 4918, 11.1 */
 	MultiStatus = 207
-	/** RFC 5842, 7.1 */
+	// AlreadyReported /** RFC 5842, 7.1 */
 	AlreadyReported = 208
-	/** RFC 3229, 10.4.1 */
+	// IMUsed /** RFC 3229, 10.4.1 */
 	IMUsed = 226
-	/** RFC 7231, 6.4.1 */
+	// MultipleChoices /** RFC 7231, 6.4.1 */
 	MultipleChoices = 300
-	/** RFC 7231, 6.4.2 */
+	// MovedPermanently /** RFC 7231, 6.4.2 */
 	MovedPermanently = 301
-	/** RFC 7231, 6.4.3 */
+	// Found /** RFC 7231, 6.4.3 */
 	Found = 302
-	/** RFC 7231, 6.4.4 */
+	// SeeOther /** RFC 7231, 6.4.4 */
 	SeeOther = 303
-	/** RFC 7232, 4.1 */
+	// NotModified /** RFC 7232, 4.1 */
 	NotModified = 304
-	/** RFC 7231, 6.4.5 */
+	// UseProxy /** RFC 7231, 6.4.5 */
 	UseProxy = 305
-	/** RFC 7231, 6.4.7 */
+	// TemporaryRedirect /** RFC 7231, 6.4.7 */
 	TemporaryRedirect = 307
-	/** RFC 7538, 3 */
+	// PermanentRedirect /** RFC 7538, 3 */
 	PermanentRedirect = 308
-	/** RFC 7231, 6.5.1 */
+	// BadRequest /** RFC 7231, 6.5.1 */
 	BadRequest = 400
-	/** RFC 7235, 3.1 */
+	// Unauthorized /** RFC 7235, 3.1 */
 	Unauthorized = 401
-	/** RFC 7231, 6.5.2 */
+	// PaymentRequired /** RFC 7231, 6.5.2 */
 	PaymentRequired = 402
-	/** RFC 7231, 6.5.3 */
+	// Forbidden /** RFC 7231, 6.5.3 */
 	Forbidden = 403
-	/** RFC 7231, 6.5.4 */
+	// NotFound /** RFC 7231, 6.5.4 */
 	NotFound = 404
-	/** RFC 7231, 6.5.5 */
+	// MethodNotAllowed /** RFC 7231, 6.5.5 */
 	MethodNotAllowed = 405
-	/** RFC 7231, 6.5.6 */
+	// NotAcceptable /** RFC 7231, 6.5.6 */
 	NotAcceptable = 406
-	/** RFC 7235, 3.2 */
+	// ProxyAuthRequired /** RFC 7235, 3.2 */
 	ProxyAuthRequired = 407
-	/** RFC 7231, 6.5.7 */
+	// RequestTimeout /** RFC 7231, 6.5.7 */
 	RequestTimeout = 408
-	/** RFC 7231, 6.5.8 */
+	// Conflict /** RFC 7231, 6.5.8 */
 	Conflict = 409
-	/** RFC 7231, 6.5.9 */
+	// Gone /** RFC 7231, 6.5.9 */
 	Gone = 410
-	/** RFC 7231, 6.5.10 */
+	// LengthRequired /** RFC 7231, 6.5.10 */
 	LengthRequired = 411
-	/** RFC 7232, 4.2 */
+	// PreconditionFailed /** RFC 7232, 4.2 */
 	PreconditionFailed = 412
-	/** RFC 7231, 6.5.11 */
+	// RequestEntityTooLarge /** RFC 7231, 6.5.11 */
 	RequestEntityTooLarge = 413
-	/** RFC 7231, 6.5.12 */
+	// RequestURITooLong /** RFC 7231, 6.5.12 */
 	RequestURITooLong = 414
-	/** RFC 7231, 6.5.13 */
+	// UnsupportedMediaType /** RFC 7231, 6.5.13 */
 	UnsupportedMediaType = 415
-	/** RFC 7233, 4.4 */
+	// RequestedRangeNotSatisfiable /** RFC 7233, 4.4 */
 	RequestedRangeNotSatisfiable = 416
-	/** RFC 7231, 6.5.14 */
+	// ExpectationFailed /** RFC 7231, 6.5.14 */
 	ExpectationFailed = 417
-	/** RFC 7168, 2.3.3 */
+	// Teapot /** RFC 7168, 2.3.3 */
 	Teapot = 418
-	/** RFC 7540, 9.1.2 */
+	// MisdirectedRequest /** RFC 7540, 9.1.2 */
 	MisdirectedRequest = 421
-	/** RFC 4918, 11.2 */
+	// UnprocessableEntity /** RFC 4918, 11.2 */
 	UnprocessableEntity = 422
-	/** RFC 4918, 11.3 */
+	// Locked /** RFC 4918, 11.3 */
 	Locked = 423
-	/** RFC 4918, 11.4 */
+	// FailedDependency /** RFC 4918, 11.4 */
 	FailedDependency = 424
-	/** RFC 8470, 5.2 */
+	// TooEarly /** RFC 8470, 5.2 */
 	TooEarly = 425
-	/** RFC 7231, 6.5.15 */
+	// UpgradeRequired /** RFC 7231, 6.5.15 */
 	UpgradeRequired = 426
-	/** RFC 6585, 3 */
+	// PreconditionRequired /** RFC 6585, 3 */
 	PreconditionRequired = 428
-	/** RFC 6585, 4 */
+	// TooManyRequests /** RFC 6585, 4 */
 	TooManyRequests = 429
-	/** RFC 6585, 5 */
+	// RequestHeaderFieldsTooLarge /** RFC 6585, 5 */
 	RequestHeaderFieldsTooLarge = 431
-	/** RFC 7725, 3 */
+	// UnavailableForLegalReasons /** RFC 7725, 3 */
 	UnavailableForLegalReasons = 451
 
-	/** RFC 7231, 6.6.1 */
+	// InternalServerError /** RFC 7231, 6.6.1 */
 	InternalServerError = 500
-	/** RFC 7231, 6.6.2 */
+	// NotImplemented /** RFC 7231, 6.6.2 */
 	NotImplemented = 501
-	/** RFC 7231, 6.6.3 */
+	// BadGateway /** RFC 7231, 6.6.3 */
 	BadGateway = 502
-	/** RFC 7231, 6.6.4 */
+	// ServiceUnavailable /** RFC 7231, 6.6.4 */
 	ServiceUnavailable = 503
-	/** RFC 7231, 6.6.5 */
+	// GatewayTimeout /** RFC 7231, 6.6.5 */
 	GatewayTimeout = 504
-	/** RFC 7231, 6.6.6 */
+	// HTTPVersionNotSupported /** RFC 7231, 6.6.6 */
 	HTTPVersionNotSupported = 505
-	/** RFC 2295, 8.1 */
+	// VariantAlsoNegotiates /** RFC 2295, 8.1 */
 	VariantAlsoNegotiates = 506
-	/** RFC 4918, 11.5 */
+	// InsufficientStorage /** RFC 4918, 11.5 */
 	InsufficientStorage = 507
-	/** RFC 5842, 7.2 */
+	// LoopDetected /** RFC 5842, 7.2 */
 	LoopDetected = 508
-	/** RFC 2774, 7 */
+	// NotExtended /** RFC 2774, 7 */
 	NotExtended = 510
-	/** RFC 6585, 6 */
+	// NetworkAuthenticationRequired /** RFC 6585, 6 */
 	NetworkAuthenticationRequired = 511
 )
 

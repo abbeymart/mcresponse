@@ -6,8 +6,8 @@ package mcresponse
 
 type ResponseMessage struct {
 	Code       string      `json:"code"`
-	ResCode    int         `json:"res_code"`    // Standard Http Code
-	ResMessage string      `json:"res_message"` // Standard Http-Code Text
+	ResCode    int         `json:"resCode"`    // Standard HttpCode
+	ResMessage string      `json:"resMessage"` // Standard HttpCode Text
 	Message    string      `json:"message"`
 	Value      interface{} `json:"value"`
 }

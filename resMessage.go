@@ -18,7 +18,7 @@ func GetResMessage(msgType string, options ResponseMessageOptions) ResponseMessa
 	var (
 		value      interface{} = nil
 		code                   = "unknown"
-		resCode                = 501 // NotImplemented
+		resCode                = UnprocessableEntity
 		resMessage             = ""
 		message                = "Unknown/Unspecified response message"
 	)
