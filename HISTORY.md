@@ -2,7 +2,7 @@
 
 ## Version 0.5.0
 
-- Release date: TBD | June 25, 2021
+- Release date: June 23, 2021
 - Refactored HTTPStatusCode comments
 - Refactored 304 (NotModified) HTTPStatusCode to other resCode to include response-body
 
