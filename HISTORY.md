@@ -1,5 +1,11 @@
 # Historical logs
 
+## Version 0.6.0
+
+- Release date: Oct 18, 2021
+- Refactored json-params-to-camelCase
+
+
 ## Version 0.5.0
 
 - Release date: June 23, 2021
