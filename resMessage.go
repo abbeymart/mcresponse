@@ -14,7 +14,7 @@ func msgFunc(code string, resCode int, resMessage string, msg string, value inte
 	}
 }
 
-func GetResMessage(msgType string, options ResponseMessageOptions) ResponseMessage {
+func GetResMessage(msgCode string, options ResponseMessageOptions) ResponseMessage {
 	var (
 		value      interface{} = nil
 		code                   = "unknown"
@@ -23,7 +23,7 @@ func GetResMessage(msgType string, options ResponseMessageOptions) ResponseMessa
 		message                = "Unknown/Unspecified response message"
 	)
 	// compose response-Message
-	if val, ok := StdResMessages[msgType]; ok {
+	if val, ok := StdResMessages[msgCode]; ok {
 		code = val.Code
 		resCode = val.ResCode
 		resMessage = val.ResMessage
@@ -46,19 +46,18 @@ func GetResMessage(msgType string, options ResponseMessageOptions) ResponseMessa
 			resMessage = val.ResMessage
 			message = val.Message
 			value = val.Value
-			// update msgType and option-values: Message && Value
-			if msgType != "" {
-				// set value to msgType, as specified
-				code = msgType
+			// update msgCode and option-values: Message && Value
+			if msgCode != "" {
+				// set value to msgCode, as specified
+				code = msgCode
 			}
 			if options.Value != nil {
 				// set value to optional value
 				value = options.Value
 			}
 			if options.Message != "" {
-				// append optional message
-				message += " | "
-				message += options.Message
+				// set message to optional message
+				message = options.Message
 			}
 		}
 	}
