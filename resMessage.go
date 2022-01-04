@@ -35,9 +35,11 @@ func GetResMessage(msgCode string, options ResponseMessageOptions) ResponseMessa
 			value = options.Value
 		}
 		if options.Message != "" {
+			// set message to optional message
+			message = options.Message
 			// append optional message
-			message += " | "
-			message += options.Message
+			//message += " | "
+			//message += options.Message
 		}
 	} else {
 		if val, ok := StdResMessages["unknown"]; ok {

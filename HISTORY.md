@@ -1,10 +1,14 @@
 # Historical logs
 
+## Version 0.8.0
+
+- Release date: Jan 03, 2022
+- Refactor and removed redundant standard-message
+
 ## Version 0.7.0
 
 - Release date: Jan 03, 2022
 - Refactor and simplify response
-
 
 ## Version 0.6.0
 
