@@ -1,6 +1,6 @@
 // @Author: abbeymart | Abi Akindele | @Created: 2020-11-30 | @Updated: 2020-11-30
 // @Company: mConnect.biz | @License: MIT
-// @Description: mcconfig: standard network codes and texts
+// @Description: mcconfig: standard network codes and texts | v0.9.1
 
 package mcresponse
 

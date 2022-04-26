@@ -1,5 +1,9 @@
 # Historical logs
 
+## Version 0.9.1
+- Release date: April 26, 2022
+- refactored response-message
+
 ## Version 0.9.0
 - Release date: April 26, 2022
 - Updated go-v1.18 and refactored response-message
