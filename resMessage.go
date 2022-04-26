@@ -15,15 +15,14 @@ func msgFunc(code string, resCode int, resMessage string, msg string, value inte
 }
 
 func GetResMessage(msgCode string, options ResponseMessageOptions) ResponseMessage {
-	var (
-		value      interface{} = nil
-		code                   = "unknown"
-		resCode                = UnprocessableEntity
-		resMessage             = ""
-		message                = "Unknown/Unspecified response message"
-	)
-	// compose response-Message
-	if val, ok := StdResMessages[msgCode]; ok {
+	var value interface{} = nil
+	code := "unknown"
+	resCode := OK
+	resMessage := ""
+	message := "Unknown/UnAuthorized action"
+	// compose response-Message: for known/standard code/messageParam OR unknown/user-specified-code/message/value
+	val, ok := StdResMessages[msgCode]
+	if ok {
 		code = val.Code
 		resCode = val.ResCode
 		resMessage = val.ResMessage
@@ -37,17 +36,15 @@ func GetResMessage(msgCode string, options ResponseMessageOptions) ResponseMessa
 		if options.Message != "" {
 			// set message to optional message
 			message = options.Message
-			// append optional message
-			//message += " | "
-			//message += options.Message
 		}
 	} else {
-		if val, ok := StdResMessages["unknown"]; ok {
-			code = val.Code
-			resCode = val.ResCode
-			resMessage = val.ResMessage
-			message = val.Message
-			value = val.Value
+		defaultVal, dOk := StdResMessages["unknown"]
+		if dOk {
+			code = defaultVal.Code
+			resCode = defaultVal.ResCode
+			resMessage = defaultVal.ResMessage
+			message = defaultVal.Message
+			value = defaultVal.Value
 			// update msgCode and option-values: Message && Value
 			if msgCode != "" {
 				// set value to msgCode, as specified

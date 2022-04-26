@@ -13,8 +13,10 @@ import "github.com/abbeymart/mctest"
 
 func TestResMessage(t *testing.T) {
 	// test-data
-	const msgType = "success"
-	const msgType2 = "checkError"
+	msgType := "success"
+	msgType2 := "checkError"
+	msgType3 := "custom"
+	msg3 := "Custom Message"
 	options := ResponseMessageOptions{
 		Message: "",
 		Value:   []string{"a", "b", "c"},
@@ -22,6 +24,10 @@ func TestResMessage(t *testing.T) {
 	options2 := ResponseMessageOptions{
 		Message: "",
 		Value:   "",
+	}
+	options3 := ResponseMessageOptions{
+		Message: msg3,
+		Value:   "Custom",
 	}
 	res := ResponseMessage{
 		Code:       "success",
@@ -37,8 +43,14 @@ func TestResMessage(t *testing.T) {
 		Value:      "",
 		Message:    "Parameters checking error",
 	}
-	//const unAuthMsg = "unAuthorized"
-
+	res3 := ResponseMessage{
+		Code:       "custom",
+		ResCode:    200,
+		ResMessage: "OK",
+		Value:      "Custom",
+		Message:    "Custom Message",
+	}
+	// Test cases
 	mctest.McTest(mctest.OptionValue{
 		Name: "should return success code for success-message",
 		TestFunc: func() {
@@ -71,6 +83,14 @@ func TestResMessage(t *testing.T) {
 			}
 			req := GetResMessage(msgType, options)
 			mctest.AssertEquals(t, strings.Contains(req.Message, options.Message), true, "response-message should contains: "+options.Message)
+		},
+	})
+	mctest.McTest(mctest.OptionValue{
+		Name: "should return correct custom message",
+		TestFunc: func() {
+			req := GetResMessage(msgType3, options3)
+			mctest.AssertEquals(t, req.Code, res3.Code, "response-code should be: "+res3.Code)
+			mctest.AssertEquals(t, strings.Contains(req.Message, options3.Message), true, "response-message should contains: "+options3.Message)
 		},
 	})
 

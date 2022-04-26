@@ -51,8 +51,8 @@ const (
 	PermanentRedirect = 308
 	// BadRequest /** RFC 7231, 6.5.1 */
 	BadRequest = 400
-	// Unauthorized /** RFC 7235, 3.1 */
-	Unauthorized = 401
+	// UnAuthorized /** RFC 7235, 3.1 */
+	UnAuthorized = 401
 	// PaymentRequired /** RFC 7231, 6.5.2 */
 	PaymentRequired = 402
 	// Forbidden /** RFC 7231, 6.5.3 */
@@ -156,7 +156,7 @@ var StatusText = map[int]string{
 	TemporaryRedirect:             "Temporary Redirect",
 	PermanentRedirect:             "Permanent Redirect",
 	BadRequest:                    "Bad Request",
-	Unauthorized:                  "Unauthorized",
+	UnAuthorized:                  "UnAuthorized",
 	PaymentRequired:               "Payment Required",
 	Forbidden:                     "Forbidden",
 	NotFound:                      "Not Found",
