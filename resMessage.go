@@ -16,12 +16,12 @@ func msgFunc(code string, resCode int, resMessage string, msg string, value inte
 
 func GetResMessage(msgCode string, options ResponseMessageOptions) ResponseMessage {
 	var value interface{} = nil
-	code := "unknown"
+	code := msgCode
 	resCode := OK
 	resMessage := ""
-	message := "Unknown/UnAuthorized action"
+	message := options.Message
 	// compose response-Message: for known/standard code/messageParam OR unknown/user-specified-code/message/value
-	val, ok := StdResMessages[msgCode]
+	val, ok := StdResMessages[code]
 	if ok {
 		code = val.Code
 		resCode = val.ResCode
@@ -58,6 +58,12 @@ func GetResMessage(msgCode string, options ResponseMessageOptions) ResponseMessa
 				// set message to optional message
 				message = options.Message
 			}
+		} else {
+			code = msgCode
+			resCode = 404
+			resMessage = options.Message
+			message = options.Message
+			value = options.Value
 		}
 	}
 

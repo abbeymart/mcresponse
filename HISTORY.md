@@ -1,5 +1,9 @@
 # Historical logs
 
+## Version 0.9.2
+- Release date: Dec 20, 2022
+- refactored msgCode-updated-gov1.19-v0.9.2
+
 ## Version 0.9.1
 - Release date: April 26, 2022
 - refactored response-message
