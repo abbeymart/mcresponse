@@ -4,7 +4,10 @@
 
 package mcresponse
 
+import "fmt"
+
 func msgFunc(code string, resCode int, resMessage string, msg string, value interface{}) ResponseMessage {
+	fmt.Printf("msgCode: %v\n", code)
 	return ResponseMessage{
 		Code:       code,
 		ResCode:    resCode,
@@ -40,23 +43,26 @@ func GetResMessage(msgCode string, options ResponseMessageOptions) ResponseMessa
 	} else {
 		defaultVal, dOk := StdResMessages["unknown"]
 		if dOk {
-			code = defaultVal.Code
 			resCode = defaultVal.ResCode
 			resMessage = defaultVal.ResMessage
-			message = defaultVal.Message
-			value = defaultVal.Value
-			// update msgCode and option-values: Message && Value
+			// update Code, Value and Message
 			if msgCode != "" {
 				// set value to msgCode, as specified
 				code = msgCode
+			} else {
+				code = defaultVal.Code
 			}
 			if options.Value != nil {
 				// set value to optional value
 				value = options.Value
+			} else {
+				value = defaultVal.Value
 			}
 			if options.Message != "" {
 				// set message to optional message
 				message = options.Message
+			} else {
+				message = defaultVal.Message
 			}
 		} else {
 			code = msgCode

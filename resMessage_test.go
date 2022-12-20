@@ -119,5 +119,17 @@ func TestResMessage(t *testing.T) {
 		},
 	})
 
+	mctest.McTest(mctest.OptionValue{
+		Name: "should return authCode and auth-code message",
+		TestFunc: func() {
+			req := GetResMessage("authCode", ResponseMessageOptions{
+				Message: "auth-code",
+				Value:   nil,
+			})
+			mctest.AssertEquals(t, req.Code, "authCode", "response-code should be: authCode")
+			mctest.AssertEquals(t, req.Message, "auth-code", "response-message should be: auth-code")
+		},
+	})
+
 	mctest.PostTestResult()
 }
