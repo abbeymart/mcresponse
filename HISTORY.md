@@ -1,5 +1,9 @@
 # Historical logs
 
+## Version 0.9.4
+- Release date: Dec 21, 2022
+- removed-res-code-tracking-v0.9.4
+
 ## Version 0.9.3
 - Release date: Dec 20, 2022
 - refactored-set-msgCode-v0.9.3

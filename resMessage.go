@@ -4,10 +4,7 @@
 
 package mcresponse
 
-import "fmt"
-
 func msgFunc(code string, resCode int, resMessage string, msg string, value interface{}) ResponseMessage {
-	fmt.Printf("msgCode: %v\n", code)
 	return ResponseMessage{
 		Code:       code,
 		ResCode:    resCode,
