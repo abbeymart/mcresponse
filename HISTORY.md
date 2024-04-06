@@ -1,5 +1,9 @@
 # Historical logs
 
+## Version 0.9.6
+- Release date: April 06, 2024
+- Added message-codes-constants-v0.9.6
+
 ## Version 0.9.5
 - Release date: Oct-21, 2023
 - corrected-message-text-v0.9.5

@@ -5,6 +5,7 @@
 package mcresponse
 
 import (
+	"github.com/abbeymart/mcresponse/messagecodes"
 	"strconv"
 	"strings"
 	"testing"
@@ -13,8 +14,8 @@ import "github.com/abbeymart/mctest"
 
 func TestResMessage(t *testing.T) {
 	// test-data
-	msgType := "success"
-	msgType2 := "checkError"
+	msgType := messagecodes.Success
+	msgType2 := messagecodes.CheckError
 	msgType3 := "custom"
 	msg3 := "Custom Message"
 	options := ResponseMessageOptions{
@@ -30,14 +31,14 @@ func TestResMessage(t *testing.T) {
 		Value:   "Custom",
 	}
 	res := ResponseMessage{
-		Code:       "success",
+		Code:       messagecodes.Success,
 		ResCode:    200,
 		ResMessage: "OK",
 		Value:      "",
 		Message:    "Request completed successfully",
 	}
 	res2 := ResponseMessage{
-		Code:       "paramsError",
+		Code:       messagecodes.ParamsError,
 		ResCode:    406,
 		ResMessage: "Not Acceptable",
 		Value:      "",

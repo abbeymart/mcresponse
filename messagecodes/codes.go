@@ -1,0 +1,25 @@
+package messagecodes
+
+const (
+	ParamsError      = "paramsError"
+	CheckError       = "checkError"
+	ConnectError     = "connectError"
+	ValidateError    = "validateError"
+	TokenExpired     = "tokenExpired"
+	UnAuthorizedText = "unAuthorized"
+	NotFoundText     = "notFound"
+	Success          = "success"
+	RemoveDenied     = "removeDenied"
+	RemoveError      = "removeError"
+	Removed          = "removed"
+	Deleted          = "deleted"
+	SubItems         = "subItems"
+	Duplicate        = "duplicate"
+	Updated          = "updated"
+	UpdateError      = "updateError"
+	UpdateDenied     = "updateDenied"
+	Inserted         = "inserted"
+	InsertError      = "insertError"
+	Exists           = "exists"
+	Unknown          = "unknown"
+)
