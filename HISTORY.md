@@ -1,5 +1,9 @@
 # Historical logs
 
+## Version 0.9.7
+- Release date: Dec 09, 2025
+- updated-mctest-to-v0.7.1-v0.9.6
+
 ## Version 0.9.6
 - Release date: April 06, 2024
 - Added message-codes-constants-v0.9.6

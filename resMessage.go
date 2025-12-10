@@ -28,7 +28,7 @@ func GetResMessage(msgCode string, options ResponseMessageOptions) ResponseMessa
 		resMessage = val.ResMessage
 		message = val.Message
 		value = val.Value
-		// update option-values: Message && Value
+		// update option-values: Message && ItemValue
 		if options.Value != nil {
 			// set value to optional value
 			value = options.Value
@@ -42,7 +42,7 @@ func GetResMessage(msgCode string, options ResponseMessageOptions) ResponseMessa
 		if dOk {
 			resCode = defaultVal.ResCode
 			resMessage = defaultVal.ResMessage
-			// update Code, Value and Message
+			// update Code, ItemValue and Message
 			if msgCode != "" {
 				// set value to msgCode, as specified
 				code = msgCode

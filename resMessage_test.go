@@ -5,10 +5,11 @@
 package mcresponse
 
 import (
-	"github.com/abbeymart/mcresponse/messagecodes"
 	"strconv"
 	"strings"
 	"testing"
+
+	"github.com/abbeymart/mcresponse/messagecodes"
 )
 import "github.com/abbeymart/mctest"
 
@@ -52,7 +53,7 @@ func TestResMessage(t *testing.T) {
 		Message:    "Custom Message",
 	}
 	// Test cases
-	mctest.McTest(mctest.OptionValue{
+	mctest.McTest(mctest.ParamsType{
 		Name: "should return success code for success-message",
 		TestFunc: func() {
 			req := GetResMessage(msgType, options)
@@ -60,7 +61,7 @@ func TestResMessage(t *testing.T) {
 			mctest.AssertEquals(t, req.Message, res.Message, "response-message should be: "+res.Message)
 		},
 	})
-	mctest.McTest(mctest.OptionValue{
+	mctest.McTest(mctest.ParamsType{
 		Name: "should return ok/200 resCode for success-message",
 		TestFunc: func() {
 			req := GetResMessage(msgType, ResponseMessageOptions{})
@@ -68,14 +69,14 @@ func TestResMessage(t *testing.T) {
 			mctest.AssertEquals(t, req.Message, res.Message, "response-message should be: "+res.Message)
 		},
 	})
-	mctest.McTest(mctest.OptionValue{
+	mctest.McTest(mctest.ParamsType{
 		Name: "should return Completed successfully message for success-message",
 		TestFunc: func() {
 			req := GetResMessage(msgType, options)
 			mctest.AssertEquals(t, req.Message, res.Message, "response-message should be: "+res.Message)
 		},
 	})
-	mctest.McTest(mctest.OptionValue{
+	mctest.McTest(mctest.ParamsType{
 		Name: "should return correct default message",
 		TestFunc: func() {
 			options := ResponseMessageOptions{
@@ -86,7 +87,7 @@ func TestResMessage(t *testing.T) {
 			mctest.AssertEquals(t, strings.Contains(req.Message, options.Message), true, "response-message should contains: "+options.Message)
 		},
 	})
-	mctest.McTest(mctest.OptionValue{
+	mctest.McTest(mctest.ParamsType{
 		Name: "should return correct custom message",
 		TestFunc: func() {
 			req := GetResMessage(msgType3, options3)
@@ -96,7 +97,7 @@ func TestResMessage(t *testing.T) {
 	})
 
 	// check-error test-cases
-	mctest.McTest(mctest.OptionValue{
+	mctest.McTest(mctest.ParamsType{
 		Name: "should return paramsError code for checkError-message",
 		TestFunc: func() {
 			req := GetResMessage(msgType2, options2)
@@ -104,7 +105,7 @@ func TestResMessage(t *testing.T) {
 			mctest.AssertNotEquals(t, req.Code, "unAuthorized", "response-code"+req.Code+"should not be: unAuthorized")
 		},
 	})
-	mctest.McTest(mctest.OptionValue{
+	mctest.McTest(mctest.ParamsType{
 		Name: "should return NOT_ACCEPTABLE/406 resCode",
 		TestFunc: func() {
 			req := GetResMessage(msgType2, ResponseMessageOptions{})
@@ -112,7 +113,7 @@ func TestResMessage(t *testing.T) {
 			mctest.AssertEquals(t, req.ResMessage, res2.ResMessage, "response-message should be: "+res2.ResMessage)
 		},
 	})
-	mctest.McTest(mctest.OptionValue{
+	mctest.McTest(mctest.ParamsType{
 		Name: "should return Parameters checking error message",
 		TestFunc: func() {
 			req := GetResMessage(msgType2, options2)
@@ -120,7 +121,7 @@ func TestResMessage(t *testing.T) {
 		},
 	})
 
-	mctest.McTest(mctest.OptionValue{
+	mctest.McTest(mctest.ParamsType{
 		Name: "should return authCode and auth-code message",
 		TestFunc: func() {
 			req := GetResMessage("authCode", ResponseMessageOptions{
