@@ -1,10 +1,11 @@
-// @Author: abbeymart | Abi Akindele | @Created: 2020-12-01 | @Updated: 2020-12-01
+// @Author: abbeymart | Abi Akindele | @Created: 2020-12-01 | @Updated: 2020-12-01, 2026-06-04
 // @Company: mConnect.biz | @License: MIT
 // @Description: mConnect standard transaction response testing | v0.9.1
 
 package mcresponse
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 	"testing"
@@ -53,85 +54,123 @@ func TestResMessage(t *testing.T) {
 		Message:    "Custom Message",
 	}
 	// Test cases
-	mctest.McTest(mctest.ParamsType{
+
+	var results []mctest.UnitTestResult
+
+	test1 := mctest.NewTest(mctest.ParamsType{
 		Name: "should return success code for success-message",
-		TestFunc: func() {
-			req := GetResMessage(msgType, options)
-			mctest.AssertEquals(t, req.Code, res.Code, "response-code should be: "+res.Code)
-			mctest.AssertEquals(t, req.Message, res.Message, "response-message should be: "+res.Message)
-		},
 	})
-	mctest.McTest(mctest.ParamsType{
+	test1.SetTestFunction(func() {
+		req := GetResMessage(msgType, options)
+		test1.AssertEquals(req.Code, res.Code, "response-code should be: "+res.Code)
+		test1.AssertEquals(req.Message, res.Message, "response-message should be: "+res.Message)
+	})
+	test1Result := test1.RunTest()
+	results = append(results, test1Result)
+
+	fmt.Println("")
+	test2 := mctest.NewTest(mctest.ParamsType{
 		Name: "should return ok/200 resCode for success-message",
-		TestFunc: func() {
-			req := GetResMessage(msgType, ResponseMessageOptions{})
-			mctest.AssertEquals(t, req.ResCode, res.ResCode, "response-code should be: "+strconv.Itoa(res.ResCode))
-			mctest.AssertEquals(t, req.Message, res.Message, "response-message should be: "+res.Message)
-		},
 	})
-	mctest.McTest(mctest.ParamsType{
+	test2.SetTestFunction(func() {
+		req := GetResMessage(msgType, ResponseMessageOptions{})
+		test2.AssertEquals(req.ResCode, res.ResCode, "response-code should be: "+strconv.Itoa(res.ResCode))
+		test2.AssertEquals(req.Message, res.Message, "response-message should be: "+res.Message)
+	})
+	test2Result := test2.RunTest()
+	results = append(results, test2Result)
+
+	fmt.Println("")
+	test3 := mctest.NewTest(mctest.ParamsType{
 		Name: "should return Completed successfully message for success-message",
-		TestFunc: func() {
-			req := GetResMessage(msgType, options)
-			mctest.AssertEquals(t, req.Message, res.Message, "response-message should be: "+res.Message)
-		},
 	})
-	mctest.McTest(mctest.ParamsType{
+	test3.SetTestFunction(func() {
+		req := GetResMessage(msgType, ResponseMessageOptions{})
+		test3.AssertEquals(req.Message, res.Message, "response-message should be: "+res.Message)
+	})
+	test3Result := test3.RunTest()
+	results = append(results, test3Result)
+
+	fmt.Println("")
+	test4 := mctest.NewTest(mctest.ParamsType{
 		Name: "should return correct default message",
-		TestFunc: func() {
-			options := ResponseMessageOptions{
-				Value:   []string{"a", "b", "c"},
-				Message: "Successful",
-			}
-			req := GetResMessage(msgType, options)
-			mctest.AssertEquals(t, strings.Contains(req.Message, options.Message), true, "response-message should contains: "+options.Message)
-		},
 	})
-	mctest.McTest(mctest.ParamsType{
+	test4.SetTestFunction(func() {
+		options := ResponseMessageOptions{
+			Value:   []string{"a", "b", "c"},
+			Message: "Successful",
+		}
+		req := GetResMessage(msgType, options)
+		test4.AssertEquals(strings.Contains(req.Message, options.Message), true, "response-message should contains: "+options.Message)
+	})
+	test4Result := test4.RunTest()
+	results = append(results, test4Result)
+
+	fmt.Println("")
+	test5 := mctest.NewTest(mctest.ParamsType{
 		Name: "should return correct custom message",
-		TestFunc: func() {
-			req := GetResMessage(msgType3, options3)
-			mctest.AssertEquals(t, req.Code, res3.Code, "response-code should be: "+res3.Code)
-			mctest.AssertEquals(t, strings.Contains(req.Message, options3.Message), true, "response-message should contains: "+options3.Message)
-		},
 	})
+	test5.SetTestFunction(func() {
+		req := GetResMessage(msgType3, options3)
+		test5.AssertEquals(req.Code, res3.Code, "response-code should be: "+res3.Code)
+		test5.AssertEquals(strings.Contains(req.Message, options3.Message), true, "response-message should contains: "+options3.Message)
+	})
+	test5Result := test5.RunTest()
+	results = append(results, test5Result)
 
 	// check-error test-cases
-	mctest.McTest(mctest.ParamsType{
+
+	fmt.Println("")
+	test6 := mctest.NewTest(mctest.ParamsType{
 		Name: "should return paramsError code for checkError-message",
-		TestFunc: func() {
-			req := GetResMessage(msgType2, options2)
-			mctest.AssertEquals(t, req.Code, res2.Code, "response-code should be: "+res2.Code)
-			mctest.AssertNotEquals(t, req.Code, "unAuthorized", "response-code"+req.Code+"should not be: unAuthorized")
-		},
 	})
-	mctest.McTest(mctest.ParamsType{
+	test6.SetTestFunction(func() {
+		req := GetResMessage(msgType2, options2)
+		test6.AssertEquals(req.Code, res2.Code, "response-code should be: "+res2.Code)
+		test6.AssertNotEquals(req.Code, "unAuthorized", "response-code"+req.Code+"should not be: unAuthorized")
+	})
+	test6Result := test6.RunTest()
+	results = append(results, test6Result)
+
+	fmt.Println("")
+	test7 := mctest.NewTest(mctest.ParamsType{
 		Name: "should return NOT_ACCEPTABLE/406 resCode",
-		TestFunc: func() {
-			req := GetResMessage(msgType2, ResponseMessageOptions{})
-			mctest.AssertEquals(t, req.ResCode, res2.ResCode, "response-code should be: "+strconv.Itoa(res2.ResCode))
-			mctest.AssertEquals(t, req.ResMessage, res2.ResMessage, "response-message should be: "+res2.ResMessage)
-		},
 	})
-	mctest.McTest(mctest.ParamsType{
+	test7.SetTestFunction(func() {
+		req := GetResMessage(msgType2, ResponseMessageOptions{})
+		test7.AssertEquals(req.ResCode, res2.ResCode, "response-code should be: "+strconv.Itoa(res2.ResCode))
+		test7.AssertEquals(req.ResMessage, res2.ResMessage, "response-message should be: "+res2.ResMessage)
+	})
+	test7Result := test7.RunTest()
+	results = append(results, test7Result)
+
+	fmt.Println("")
+	test8 := mctest.NewTest(mctest.ParamsType{
 		Name: "should return Parameters checking error message",
-		TestFunc: func() {
-			req := GetResMessage(msgType2, options2)
-			mctest.AssertEquals(t, req.Message, res2.Message, "response-code should be: "+res2.Message)
-		},
 	})
+	test8.SetTestFunction(func() {
+		req := GetResMessage(msgType2, options2)
+		test8.AssertEquals(req.Message, res2.Message, "response-code should be: "+res2.Message)
+	})
+	test8Result := test8.RunTest()
+	results = append(results, test8Result)
 
-	mctest.McTest(mctest.ParamsType{
+	fmt.Println("")
+	test9 := mctest.NewTest(mctest.ParamsType{
 		Name: "should return authCode and auth-code message",
-		TestFunc: func() {
-			req := GetResMessage("authCode", ResponseMessageOptions{
-				Message: "auth-code",
-				Value:   nil,
-			})
-			mctest.AssertEquals(t, req.Code, "authCode", "response-code should be: authCode")
-			mctest.AssertEquals(t, req.Message, "auth-code", "response-message should be: auth-code")
-		},
 	})
+	test9.SetTestFunction(func() {
+		req := GetResMessage("authCode", ResponseMessageOptions{
+			Message: "auth-code",
+			Value:   nil,
+		})
+		test9.AssertEquals(req.Code, "authCode", "response-code should be: authCode")
+		test9.AssertEquals(req.Message, "auth-code", "response-message should be: auth-code")
+	})
+	test9Result := test9.RunTest()
+	results = append(results, test9Result)
 
-	mctest.PostTestResult()
+	// Summary result for all the test-cases
+	fmt.Println("")
+	mctest.TestResult(results)
 }

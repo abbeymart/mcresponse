@@ -1,5 +1,9 @@
 # Historical logs
 
+## Version 0.10.0
+- Release date: June 04, 2026
+- updated-mctest-to-v0.8.0-and-rewrite-testcases-v0.10.0
+
 ## Version 0.9.7
 - Release date: Dec 09, 2025
 - updated-mctest-to-v0.7.1-v0.9.6
